@@ -13,8 +13,7 @@ angular.module('medrecordTestApp')
     var colors = ['#2ca02c', '#ff7f0e'];
 
     $scope.chartTitle = "Blood Pressure";
-    $scope.startDate = '';
-    $scope.endDate = '';
+    $scope.dateRange = '';
     $scope.options = {
       chart: {
         type: 'lineWithFocusChart',
@@ -97,8 +96,7 @@ angular.module('medrecordTestApp')
           mArray = data.data;
 
         $scope.successFul = true;
-        $scope.startDate = OmhUtils.getStartDate(mArray);
-        $scope.endDate = OmhUtils.getEndDate(mArray);
+        $scope.dateRange = OmhUtils.getStartDate(mArray) + " to " +  OmhUtils.getEndDate(mArray);
         $scope.data = [{
             values: OmhUtils.getMeasurementValues(mArray, data.settings.measures.systolic_blood_pressure.valueKeyPath),
             key: 'Systolic',

@@ -13,8 +13,7 @@ angular.module('medrecordTestApp')
     var colors = ['#2ca02c', '#ff7f0e'];
 
     $scope.chartTitle = "Body Mass Index";
-    $scope.startDate = '';
-    $scope.endDate = '';
+    $scope.dateRange = '';
     $scope.options = {
       chart: {
         type: 'lineWithFocusChart',
@@ -67,8 +66,7 @@ angular.module('medrecordTestApp')
           mArray = data.data,
           valueKey = data.settings.measures.body_mass_index.valueKeyPath;
 
-        $scope.startDate = OmhUtils.getStartDate(mArray);
-        $scope.endDate = OmhUtils.getEndDate(mArray);
+        $scope.dateRange = OmhUtils.getStartDate(mArray) + " to " + OmhUtils.getEndDate(mArray);
         $scope.data = [{
           values: OmhUtils.getMeasurementValues(mArray, valueKey),
           key: 'BMI',
