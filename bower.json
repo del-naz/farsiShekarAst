@@ -1,0 +1,39 @@
+{
+  "name": "medrecord-test",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.2.0",
+    "angular-ui-router": "^0.4.2",
+    "angular-nvd3": "^1.0.9"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.6.2"
+  },
+  "appPath": "app",
+  "moduleName": "medrecordTestApp",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "authors": [
+    "delnaz <delnaz_abadi@yahoo.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ]
+}
