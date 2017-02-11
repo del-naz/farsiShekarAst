@@ -3,6 +3,8 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
 
+<a href="https://del-naz.github.io/medrecordTest/app/index.html"> See Demo </a>
+
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
