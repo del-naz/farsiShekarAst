@@ -1,6 +1,6 @@
 var options = {
-  valueNames: [ 'title', 'description', 'related', 'detals' ],
+  valueNames: [ 'title', 'description' ],
   item: '<li><h3 class="title"></h3><p class="description"></p></li>'
   };
 
-var vajehList = new List('vajehList', options, behList);
+var vajehList = new List('vajeh-list', options, behList);
