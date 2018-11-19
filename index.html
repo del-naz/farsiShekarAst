@@ -1,62 +1,137 @@
 <!DOCTYPE html>
+
 <html>
   <head>
-    <meta charset='utf-8'>
-    <title>Sheetsee Table Demo</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900,400italic|Source+Code+Pro:400' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="../favicon.png">
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-    <script type='text/javascript' src='./js/sheetsee.js'></script>
-    <link rel='stylesheet' type='text/css' href='./assets/style.css'>
+    <title>FARSI SHEKAR AST</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
   </head>
   <style>
-    #Pagination {border-top: 4px solid #CCF4FF; margin: 10px 0px; padding-top: 10px; display: inline-block;}
-    #Pagination a {cursor: pointer;}
-    .no-pag {color: #acacac; border: none;}
-    .no-pag:hover {color: #acacac;}
-    input {direction: rtl; border: none; border-bottom: 1px solid #333;margin: 10px 0px; width: 200px; font-size: 16px; padding-bottom: 6px;}
-    .tHeader {padding: 8px; cursor: pointer; text-align: left;}
+  .list {
+  font-family:sans-serif;
+  margin:0;
+  padding:20px 0 0;
+}
+.list > li {
+  display:block;
+  background-color: #eee;
+  padding:10px;
+  box-shadow: inset 0 1px 0 #fff;
+}
+.avatar {
+  max-width: 150px;
+}
+img {
+  max-width: 100%;
+}
+h3 {
+  font-size: 16px;
+  margin:0 0 0.3rem;
+  font-weight: normal;
+  font-weight:bold;
+}
+p {
+  margin:0;
+}
+
+input {
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  padding:7px 14px;
+  margin-bottom:10px
+}
+input:focus {
+  outline:none;
+  border-color:#aaa;
+}
+.sort {
+  padding:8px 30px;
+  border-radius: 6px;
+  border:none;
+  display:inline-block;
+  color:#fff;
+  text-decoration: none;
+  background-color: #28a8e0;
+  height:30px;
+}
+.sort:hover {
+  text-decoration: none;
+  background-color:#1b8aba;
+}
+.sort:focus {
+  outline:none;
+}
+.sort:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+}
+.sort.asc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  content:"";
+  position: relative;
+  top:13px;
+  right:-5px;
+}
+.sort.desc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+}
   </style>
   <body>
+    <script>
+    var options = {
+  valueNames: [ 'name', 'born' ],
+  item: '<li><h3 class="name"></h3><p class="born"></p></li>'
+};
+
+var values = [{
+    name: 'Jonny Strömberg',
+    born: 1986
+  },
+  {
+    name: 'Jonas Arnklint',
+    born: 1985
+  },
+  {
+    name: 'Martina Elm',
+    born: 1986
+}];
+
+var userList = new List('users', options, values);
+
+userList.add({
+  name: "Gustaf Lindqvist",
+  born: 1983
+});
+    </script>
     <div class="container" style="direction: rtl;">
       <h1>فارسی شکر است</h1>
-      <input id="fullTableFilter" type="text" placeholder="جستجو واژه"></input>
-      <a class="clear">Clear</a>
-      <div id="fullTable">Loading...</div>
-      <p><em><a onClick='window.location="view-source:" + window.location.href'>View Source</a> // <a href="../docs/sheetsee-tables.html">View Documentation</a></em></p>
+      <div id="users">
+        <input class="search" placeholder="Search" />
+        <button class="sort" data-sort="name">
+          Sort by name
+        </button>
 
-      <footer>
-        <h4 id="getting-started">FOOTER</h4>
-        <h4><a class="home-link" href="./index.html">Home</a></h4>
-      </footer>
+        <ul class="list"></ul>
+
+      </div>
     </div>
-
-    <script id="fullTable_template" type="text/html">
-      <table>
-        <tr><th class="tHeader">City</th><th class="tHeader">Place Name</th><th class="tHeader">Year</th><th class="tHeader">Image</th></tr>
-          {{#rows}}
-            <tr><td>{{City}}</td><td>{{PlaceName}}</td><td>{{Year}}</td><td>{{Image}}</td></tr>
-          {{/rows}}
-      </table>
-    </script>
-
-    <script type="text/javascript">
-      document.addEventListener('DOMContentLoaded', function() {
-        var URL = "0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc"
-        Tabletop.init({key: URL, callback: showInfo, simpleSheet: true})
-      })
-
-      function showInfo (data) {
-        var tableOptions = {
-          "data": data,
-          "pagination": 10,
-          "tableDiv": "#fullTable",
-          "filterDiv": "#fullTableFilter"
-        }
-        Sheetsee.makeTable(tableOptions)
-        Sheetsee.initiateTableFilter(tableOptions)
-      }
-    </script>
   </body>
 </html>
