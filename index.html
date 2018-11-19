@@ -9,6 +9,15 @@
     <script src="./js/vajeh.js"></script>
     </head>
   <style>
+  .alefba {
+    direction: rtl;
+    font-family:sans-serif;
+    margin:0;
+    padding:6px;
+  }
+  .alefba >li {
+    display: inline-block;
+  }
   .list {
   direction: rtl;
   font-family:sans-serif;
@@ -27,7 +36,6 @@
 img {
   max-width: 100%;
 }
-
 input {
   border:solid 1px #ccc;
   border-radius: 5px;
@@ -94,10 +102,18 @@ input:focus {
       <h1>فارسی شکر است</h1>
       <div id="vajeh-list">
         <input class="search" placeholder="جستجوی واژه" />
-        <button class="sort" data-sort="title">
-          Sort by name
+        <ul class="alefba">
+          <li>
+        <button onClick="searchAlpha('alef')" id="alef">
+          alef
         </button>
-
+        </li>
+        <li>
+      <button onClick="searchAlpha('beh')" id="beh">
+        beh
+      </button>
+      </li>
+    </ul>
         <ul class="list"></ul>
 
       </div>

@@ -2,12 +2,19 @@ var options = {
   valueNames: [ 'title', 'description' ],
   item: '<li><h3 class="title"></h3><p class="description"></p></li>'
   };
-  
-  var vajehList;
+
+var vajehList;
 
 function startVajeh() {
-  var vajehList = new List('vajeh-list', options, behList);
+  const lists =[{type: 'alef', list:alefList}, {type: 'beh', behList}];
+  const all =[]
+  lists.forEach(function (item) {
+      const newList = item.map(m => {m.type=item.type; return m})
+      all.concat(newList)
+    })
+  })
+  var vajehList = new List('vajeh-list', options, all);
 }
-function searchList(str) {
-  vajehList.search(str, ['title'])
+function getAlphaList(alpha) {
+  vajehList.search(alpha, ['type'])
 }
