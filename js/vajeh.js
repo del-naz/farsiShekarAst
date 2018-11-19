@@ -11,7 +11,6 @@ function startVajeh() {
   lists.forEach(function (item) {
       const newList = item.map(m => {m.type=item.type; return m})
       all.concat(newList)
-    })
   })
   var vajehList = new List('vajeh-list', options, all);
 }
