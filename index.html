@@ -4,6 +4,9 @@
   <head>
     <title>FARSI SHEKAR AST</title>
     <script src="./js/list.js"></script>
+    <script src="./data/alef.js"></script>
+    <script src="./data/beh.js"></script>
+    <script src="./js/vajeh.js"></script>
     </head>
   <style>
   .list {
@@ -97,9 +100,9 @@ input:focus {
   <body>
     <div class="container" style="direction: rtl;">
       <h1>فارسی شکر است</h1>
-      <div id="users">
-        <input class="search" placeholder="Search" />
-        <button class="sort" data-sort="name">
+      <div id="vajehList">
+        <input class="search" placeholder="جستجوی واژه" />
+        <button class="sort" data-sort="title">
           Sort by name
         </button>
 
@@ -107,31 +110,5 @@ input:focus {
 
       </div>
     </div>
-  <script>
-  var options = {
-    valueNames: [ 'name', 'born' ],
-    item: '<li><h3 class="name"></h3><p class="born"></p></li>'
-    };
-
-var values = [{
-  name: 'Jonny Strömberg',
-  born: 1986
-},
-{
-  name: 'Jonas Arnklint',
-  born: 1985
-},
-{
-  name: 'Martina Elm',
-  born: 1986
-}];
-
-var userList = new List('users', options, values);
-
-userList.add({
-name: "Gustaf Lindqvist",
-born: 1983
-});
-  </script>
 </body>
 </html>
