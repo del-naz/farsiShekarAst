@@ -1,10 +1,10 @@
 var options = {
   valueNames: [ 'title', 'description' ],
-  item: '<li>' +
-        '<div><h3 class="title"></h3><p class="description"></p><div> ' +
+  item: '<li><div class="vajehitem">' +
+        '<div><h3 class="title"></h3><p class="description"></p></div> ' +
         '<div><h4>واژه های مربوط</h4><p class="related"></p></div>' +
         '<div><h4>توضیح/ مثال</h4><p class="details"></p></div>' +
-        '</li>'
+        '</div></li>'
   };
 
 var vajehList;
