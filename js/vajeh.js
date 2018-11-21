@@ -1,12 +1,17 @@
 var options = {
   valueNames: [ 'title', 'description' ],
-  item: '<li><h3 class="title"></h3><p class="description"></p></li>'
+  item: '<li><table><tr><td><h3 class="title"></h3><p class="description"></p></td>' +
+        '<td><h4>related</h4><p class="related"></p></td>' +
+        '<td><h4>details</h4><p class="details"></p></td></tr></table></li>'
   };
 
 var vajehList;
 
 function startVajeh() {
-  const lists =[{type: 'alef', list:alefList}, {type: 'beh', behList}];
+  const lists =[
+    {type: 'alef', list:alefList},
+    {type: 'beh', behList},
+    {type: 'fe', feList}];
   const all =[]
   lists.forEach(function (item) {
       const newList = item.map(m => {m.type=item.type; return m})
