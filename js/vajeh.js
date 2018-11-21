@@ -13,7 +13,7 @@ function startVajeh() {
     {type: 'alef', list:alefList},
     {type: 'beh', list: behList},
     {type: 'fe', list: feList}];
-  const all =[]
+  let all =[]
   lists.forEach(function (item) {
       const newList = item.list.map(m => {m.type=item.type; return m})
       all.concat(newList)
