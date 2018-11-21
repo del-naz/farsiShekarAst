@@ -10,11 +10,11 @@ var vajehList;
 function startVajeh() {
   const lists =[
     {type: 'alef', list:alefList},
-    {type: 'beh', behList},
-    {type: 'fe', feList}];
+    {type: 'beh', list: behList},
+    {type: 'fe', list: feList}];
   const all =[]
   lists.forEach(function (item) {
-      const newList = item.map(m => {m.type=item.type; return m})
+      const newList = item.list.map(m => {m.type=item.type; return m})
       all.concat(newList)
   })
   var vajehList = new List('vajeh-list', options, all);
