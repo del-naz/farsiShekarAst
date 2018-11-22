@@ -10,6 +10,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
+const tabLabels = ["واژه نامه",
+                   "پژوهش",
+                   "مقالات"]
+
 const styles = {
   grow: {
     flexGrow: 1,
@@ -31,15 +35,16 @@ class Header extends Component {
   render() {
     const {classes, selectedTab, handleTabChange} = this.props
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
           <Toolbar>
             <Typography variant="h4" color="inherit" className={classes.mainTitle}>
               فارسی شكر است
             </Typography>
-            <Tabs style={{direction: 'rtl', flex:1, justifyContent: 'center'}} value={selectedTab} onChange={handleTabChange}>
-              <Tab label="واژه نامه" />
-              <Tab label="پژوهش" />
-              <Tab label="مقالات" />
+            <Tabs centered
+            style={{direction: 'rtl', flex: 1}}
+            value={selectedTab}
+            onChange={handleTabChange}>
+            {tabLabels.map(t => <Tab label={t} />)}
             </Tabs>
           </Toolbar>
         </AppBar>

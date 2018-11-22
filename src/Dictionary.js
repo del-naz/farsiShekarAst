@@ -22,12 +22,12 @@ const styles = {
     display: 'flex',
     justifyContent:'flex-start',
     flexFlow: 'wrap',
-    marginTop: '1em'
+    marginTop: '2em'
   },
   listContainer: {
     display: 'flex',
     justifyContent:'flex-start',
-    marginTop: '1em',
+    marginTop: '2em',
     flexDirection: 'column'
   },
   listItem: {

@@ -10,15 +10,22 @@ const alphaBar = require('./data/alphaBar');
 
 const styles = {
   root: {
-    width: '100%',
+    maxWidth: '100%',
     flexGrow: 1,
     display: 'flex',
-    flexDirection: 'column'
+    justifyContent: 'center'
+  },
+  app: {
+    maxWidth: 800,
+    display: 'flex',
+    flexDirection: 'column',
+    alignSelf: 'center'
   },
   appBody: {
     flex: 1,
     minHeight: 400,
-    padding: '2em'
+    padding: '2em',
+    marginTop: 60
   }
 };
 function TabContainer(props) {
@@ -58,12 +65,14 @@ class Home extends Component {
           {selectedTab} = this.state
     return (
         <div className={classes.root}>
+        <div className={classes.app}>
         <Header selectedTab={this.state.selectedTab} handleTabChange={this.handleTabChange}/>
         <Paper className={classes.appBody}>
         {selectedTab === 0 && <Dictionary master={alphaBar}/>}
         {selectedTab === 1 && <TabContainer title={'پژوهش'}>Item Two</TabContainer>}
         {selectedTab === 2 && <TabContainer title={'مقالات'}>Item Three</TabContainer>}
         </Paper>
+        </div>
         </div>
     )
   }
