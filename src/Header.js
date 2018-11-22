@@ -37,7 +37,7 @@ class Header extends Component {
     return (
         <AppBar position="fixed">
           <Toolbar>
-            <Typography variant="h4" color="inherit" className={classes.mainTitle}>
+            <Typography variant="h4" color="secondary" className={classes.mainTitle}>
               فارسی شكر است
             </Typography>
             <Tabs centered

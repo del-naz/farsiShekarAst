@@ -8,13 +8,14 @@ import {
   createMuiTheme
 } from '@material-ui/core/styles'
 
-const primaryColor = "#3F395A"
-const primaryLightColor = '#675d93'
-const primaryDarkColor = '#302c44'
-const secondaryColor = "#D81B60"
+const primaryColor = "#2a3f3f"
+const primaryLightColor = '#735223'
+const primaryDarkColor = '#422f15'
+const secondaryColor = "#e07f5f"
 const secondaryLightColor = '#F06292'
 const secondaryDarkColor = '#880E4F'
-
+const accent1 = '#e2cc8f'
+const bg2 = '#969a97'
 // Setup for custom theme.
 const theme = createMuiTheme({
   direction: 'rtl',
