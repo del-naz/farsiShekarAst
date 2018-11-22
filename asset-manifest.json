@@ -1,7 +1,7 @@
 {
   "main.css": "/farsiShekarAst/static/css/main.67b40ef4.chunk.css",
-  "main.js": "/farsiShekarAst/static/js/main.c24831a8.chunk.js",
-  "main.js.map": "/farsiShekarAst/static/js/main.c24831a8.chunk.js.map",
+  "main.js": "/farsiShekarAst/static/js/main.de53a9a5.chunk.js",
+  "main.js.map": "/farsiShekarAst/static/js/main.de53a9a5.chunk.js.map",
   "static/js/1.a926b46a.chunk.js": "/farsiShekarAst/static/js/1.a926b46a.chunk.js",
   "static/js/1.a926b46a.chunk.js.map": "/farsiShekarAst/static/js/1.a926b46a.chunk.js.map",
   "runtime~main.js": "/farsiShekarAst/static/js/runtime~main.00d679e4.js",
@@ -9,6 +9,6 @@
   "static/media/logo.svg": "/farsiShekarAst/static/media/logo.5d5d9eef.svg",
   "static/css/main.67b40ef4.chunk.css.map": "/farsiShekarAst/static/css/main.67b40ef4.chunk.css.map",
   "index.html": "/farsiShekarAst/index.html",
-  "precache-manifest.8b1961052881ab88bcdfb37aec4ef6a4.js": "/farsiShekarAst/precache-manifest.8b1961052881ab88bcdfb37aec4ef6a4.js",
+  "precache-manifest.665785ec1dc662b6b9fd345c9b1f93ff.js": "/farsiShekarAst/precache-manifest.665785ec1dc662b6b9fd345c9b1f93ff.js",
   "service-worker.js": "/farsiShekarAst/service-worker.js"
 }

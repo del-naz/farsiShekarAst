@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/farsiShekarAst/precache-manifest.8b1961052881ab88bcdfb37aec4ef6a4.js"
+  "/farsiShekarAst/precache-manifest.665785ec1dc662b6b9fd345c9b1f93ff.js"
 );
 
 workbox.clientsClaim();
