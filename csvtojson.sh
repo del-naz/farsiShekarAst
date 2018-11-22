@@ -1,0 +1,1 @@
+node ./csvtojson.sh

@@ -1,35 +1,31 @@
 {
-  "name": "sheetsee.js",
-  "version": "0.0.0",
-  "description": "sheetsee.js documentation",
-  "main": "scripts/buildpage.js",
-  "directories": {
-    "doc": "docs"
+  "name": "farsishekarast",
+  "version": "0.1.0",
+  "private": true,
+  "postinstall": "cvstojson",
+  "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "@material-ui/icons": "^3.0.1",
+    "csvtojson": "^2.0.8",
+    "eztxt4fs": "^1.0.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-jss": "^8.6.1",
+    "react-scripts": "2.1.1"
   },
   "scripts": {
-    "build": "node scripts/buildpage.js",
-    "clear": "node scripts/clear.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jlord/sheetsee.js.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [
-    "spreadsheet",
-    "data",
-    "visualize",
-    "google"
-  ],
-  "author": "jlord",
-  "license": "BSD-2-Clause",
-  "bugs": {
-    "url": "https://github.com/jlord/sheetsee.js/issues"
-  },
-  "dependencies": {
-    "glob": "~3.2.8",
-    "marked": "~0.3.1",
-    "mustache": "^2.3.0",
-    "path": "~0.4.9"
-  },
-  "devDependencies": {}
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
