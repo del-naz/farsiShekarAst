@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/farsiShekarAst/static/js/runtime~main.00d679e4.js"
   },
   {
-    "revision": "40ce0eb5f8dc4c28e2ad",
-    "url": "/farsiShekarAst/static/js/main.40ce0eb5.chunk.js"
+    "revision": "ac9d34ad0b088c7eeb14",
+    "url": "/farsiShekarAst/static/js/main.ac9d34ad.chunk.js"
   },
   {
     "revision": "702ca1083fcfb25ac269",
     "url": "/farsiShekarAst/static/js/1.702ca108.chunk.js"
   },
   {
-    "revision": "40ce0eb5f8dc4c28e2ad",
+    "revision": "ac9d34ad0b088c7eeb14",
     "url": "/farsiShekarAst/static/css/main.45475f9e.chunk.css"
   },
   {
-    "revision": "430c179cd796aa26ffb2d5808e912289",
+    "revision": "b37bc8170f3b74f9a60efe7c6901ff36",
     "url": "/farsiShekarAst/index.html"
   }
 ];
