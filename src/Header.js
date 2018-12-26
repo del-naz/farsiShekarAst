@@ -44,7 +44,7 @@ class Header extends Component {
             style={{direction: 'rtl', flex: 1}}
             value={selectedTab}
             onChange={handleTabChange}>
-            {tabLabels.map(t => <Tab label={t} />)}
+            {tabLabels.map(t => <Tab key={t} label={t} />)}
             </Tabs>
           </Toolbar>
         </AppBar>

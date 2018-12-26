@@ -33,21 +33,48 @@ const styles = {
   listItem: {
     borderBottom: '1px solid #cdcdcd'
   },
+  meaningList: {
+
+  },
+  relatedButton: {
+    padding: 3
+  },
+  inline: {
+    display: 'inline-block',
+    paddingLeft: 8
+  },
   alphaButton: {margin:1, padding:'.1em', minWidth: '2.5em', maxHeight: '2.5em'}
 };
 
-function ListItem({item, classes}) {
-  return (<div className={classes.listItem}>
-    <Typography component="div" style={{ padding: 8 }}>
-      {item.title}: {item.description}
+function ListItem({item, classes, getRelatedLinks}) {
+  const hasRelated = item.related.length > 0
+  return (<div key={item.title} className={classes.listItem}>
+    <Typography variant="h6">
+      {item.title}
     </Typography>
-    {item.related && <Typography component="div" style={{ padding: 8 }}>
-        {relatedLabel}: {item.related}
-      </Typography> }
-    {item.details && <Typography component="div" style={{ padding: 8 }}>
-      {detailsLabel}: {item.details}
-    </Typography>}
-  </div>);
+    <ul className={classes.meaningList}>{
+      item.meanings.map(meaning => {
+        const pieces = meaning.split('*')
+        const m = pieces.shift()
+        const hasExamples = pieces.length > 0
+        return <li>
+          <Typography variant="subtitle2">{m}</Typography>
+          {hasExamples && <React.Fragment>
+             <Typography variant="body2" color="primary" className={classes.inline}>{`${detailsLabel}: `}</Typography>
+             {pieces.map(ex => <Typography variant="body1"  className={classes.inline}>{ex.trim()}</Typography>)}
+          </React.Fragment>}
+        </li>})}
+    </ul>
+    { hasRelated && <React.Fragment>
+          <Typography variant="body2" color="primary" className={classes.inline}>
+          {`${relatedLabel}: `}
+          </Typography>
+          <Typography variant="subtitle1" className={classes.inline} >
+          {getRelatedLinks(item.related, classes)}
+          </Typography>
+        </React.Fragment>
+    }
+    </div>)
 }
 
 class Dictionary extends Component {
@@ -63,20 +90,29 @@ class Dictionary extends Component {
   }
 
   handleSearch = event => {
-      if (event.target.value.length > 2) {
+      if (event.target.value.length > 1) {
         this.setState({
           searchItem: event.target.value,
           items: this.getSearchItems(event.target.value),
-          selectedAlphabet: null
+          //selectedAlphabet: null
         })
       } else {
         this.setState({
           searchItem: event.target.value,
           items: null,
-          selectedAlphabet: null
+          //selectedAlphabet: null
         })
       }
   }
+
+  handleRelated = value => {
+        this.setState({
+          searchItem: value,
+          items: this.getSearchItems(value),
+          //selectedAlphabet: null
+        })
+  }
+
 
   handleSelect = selectedAlphabet => {
     this.setState({
@@ -96,14 +132,14 @@ class Dictionary extends Component {
         found = found.concat(foundItems)
       }
     })
-    return found.map(item => <ListItem item={item} classes={classes}/>)
+    return found.map(item => <ListItem item={item} classes={classes} getRelatedLinks={this.getRelatedLinks}/>)
   }
 
   getSelectItems = alpha => {
     const {master, classes} = this.props
     const list = master.find(l => l.index === alpha)
     if (list && list.data) {
-      return list.data.map(item => <ListItem item={item} classes={classes}/>)
+      return list.data.map((item, index) => <ListItem item={item} classes={classes} getRelatedLinks={this.getRelatedLinks}/>)
     } else {
       return []
     }
@@ -125,7 +161,15 @@ class Dictionary extends Component {
   }
 
   handleClearSearch = () => {
-    this.setState({searchItem: ''})
+    const {selectedAlphabet} = this.state
+    this.setState({searchItem: '',
+      items: selectedAlphabet ? this.getSelectItems(selectedAlphabet) : null
+    })
+  }
+
+  getRelatedLinks = (related, classes) => {
+    const list = related.map((item, index) => <Button key={related+index} className={classes.relatedButton} onClick={() => this.handleRelated(item)}>{item}</Button>)
+    return <div>{list}</div>
   }
 
   render() {
